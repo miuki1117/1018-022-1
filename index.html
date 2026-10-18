@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小林攝影工作室 | 臺中婚紗婚禮紀錄</title>
+  <meta name="description" content="小林攝影工作室位於臺中，提供自然不過度修飾的婚紗攝影、婚禮紀錄與個人形象照服務，以影像收藏真實情緒與重要關係。">
+  <meta name="theme-color" content="#f6f3ed">
+  <meta property="og:title" content="小林攝影工作室 | 臺中婚紗婚禮紀錄">
+  <meta property="og:description" content="自然、不過度修飾，重視情緒與現場關係。">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --paper: #f6f3ed; --ink: #292923; --muted: #77766d;
+      --line: #d9d4ca; --olive: #777b61; --white: #fffefa;
+      --serif: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.8; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { color: var(--olive); font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, .serif { font-family: var(--serif); font-weight: 400; }
+    h2 { font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.2; margin-bottom: 10px; }
+    .section-intro { color: var(--muted); max-width: 440px; margin: 0; font-size: .92rem; }
+    .site-header { position: sticky; top: 0; z-index: 10; background: rgba(246,243,237,.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(217,212,202,.75); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { font-family: var(--serif); font-size: 1.25rem; letter-spacing: .06em; white-space: nowrap; }
+    .brand small { display: block; color: var(--muted); font-family: var(--sans); font-size: .58rem; letter-spacing: .22em; }
+    .nav-links { display: flex; align-items: center; gap: clamp(14px, 2.3vw, 30px); font-size: .82rem; color: #55554d; }
+    .nav-links a:hover, footer a:hover { color: var(--olive); }
+    .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 11px 22px; border: 1px solid var(--ink); transition: .2s ease; cursor: pointer; }
+    .nav-cta, .button-dark { background: var(--ink); color: var(--white); }
+    .button-light { border-color: var(--line); background: transparent; }
+    .button:hover, .nav-cta:hover { transform: translateY(-2px); }
+    .hero { padding: 54px 0 78px; }
+    .hero-grid { display: grid; grid-template-columns: .88fr 1.12fr; gap: 54px; align-items: center; }
+    .hero-copy { padding: 24px 0; }
+    .hero h1 { font-size: clamp(3rem, 6.5vw, 6.4rem); line-height: 1.04; letter-spacing: -.045em; margin: 20px 0 24px; }
+    .hero h1 span { display: block; font-family: var(--sans); font-size: clamp(1.1rem, 2vw, 1.55rem); letter-spacing: .12em; margin-top: 16px; }
+    .hero-copy > p { max-width: 420px; color: var(--muted); margin-bottom: 28px; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-image { height: min(620px, 65vw); min-height: 420px; position: relative; }
+    .hero-image img { object-position: center 45%; }
+    .image-note { position: absolute; bottom: 18px; left: 18px; background: rgba(246,243,237,.93); padding: 9px 14px; font-size: .72rem; letter-spacing: .08em; }
+    .hero-foot { display: flex; justify-content: space-between; gap: 18px; margin-top: 26px; color: var(--muted); font-size: .75rem; letter-spacing: .08em; }
+    .intro-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 0; }
+    .intro-strip .wrap { display: flex; justify-content: space-between; gap: 22px; flex-wrap: wrap; color: #66665d; font-size: .78rem; letter-spacing: .08em; }
+    section.content-section { padding: 100px 0; }
+    .portfolio-section { padding-bottom: 72px !important; }
+    .category { margin-top: 50px; }
+    .category-top { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+    .category-top h3 { font-family: var(--serif); font-size: 1.65rem; font-weight: 400; margin: 0; }
+    .category-top span { color: var(--muted); font-size: .76rem; }
+    .photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .photo-card { margin: 0; overflow: hidden; background: #e7e1d7; }
+    .photo-card .photo { aspect-ratio: 4 / 5; overflow: hidden; }
+    .photo-card img { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+    .photo-card:hover img { transform: scale(1.035); }
+    .photo-card figcaption { display: flex; justify-content: space-between; gap: 12px; padding: 11px 2px 0; font-size: .78rem; }
+    .photo-card figcaption span:last-child { color: var(--muted); font-size: .7rem; }
+    .note { color: var(--muted); font-size: .75rem; margin-top: 18px; }
+    .cases { background: #ebe7de; }
+    .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .case-card { background: var(--paper); }
+    .case-card .case-image { height: 280px; }
+    .case-body { padding: 24px; }
+    .case-body .eyebrow { font-size: .68rem; }
+    .case-body h3 { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; margin: 8px 0 14px; }
+    .case-body p { color: var(--muted); font-size: .86rem; margin-bottom: 12px; }
+    .case-body strong { color: var(--ink); font-weight: 500; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service-card { border: 1px solid var(--line); padding: 28px 24px; display: flex; flex-direction: column; min-height: 390px; }
+    .service-card.featured { background: #e8e7dc; border-color: #d0d0c1; }
+    .service-card h3 { font-family: var(--serif); font-weight: 400; font-size: 1.55rem; margin: 8px 0; }
+    .price { font-family: var(--serif); font-size: 1.7rem; margin: 8px 0 18px; }
+    .price small { font-family: var(--sans); color: var(--muted); font-size: .72rem; }
+    .service-card ul { padding-left: 18px; color: #66665d; font-size: .84rem; margin: 0 0 24px; }
+    .service-card .button { margin-top: auto; width: 100%; }
+    .fine-print { color: var(--muted); font-size: .76rem; margin-top: 22px; }
+    .process { background: #e9e5dc; }
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid #cfc9be; }
+    .step { padding: 24px 18px 10px 0; border-right: 1px solid #cfc9be; margin-right: 18px; }
+    .step:last-child { border-right: 0; margin-right: 0; }
+    .step-number { font-family: var(--serif); font-size: 2rem; color: var(--olive); }
+    .step h3 { font-size: 1rem; font-weight: 500; margin: 12px 0 8px; }
+    .step p { color: var(--muted); font-size: .8rem; margin: 0; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
+    .about-image { height: 560px; }
+    .about-copy p { color: #66665d; }
+    .signature { margin-top: 30px; font-family: var(--serif); font-style: italic; font-size: 1.6rem; }
+    .values { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .values span { border: 1px solid var(--line); padding: 7px 12px; color: #66665d; font-size: .75rem; }
+    .contact { background: #e8e5dc; }
+    .contact-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 64px; align-items: start; }
+    .contact-copy p { color: #68675f; font-size: .9rem; }
+    .contact-detail { border-top: 1px solid #cfc9be; padding-top: 16px; margin-top: 28px; font-size: .84rem; }
+    .contact-detail p { margin-bottom: 6px; }
+    form { background: var(--paper); padding: clamp(22px, 4vw, 42px); }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: .78rem; color: #5e5d55; }
+    input, select, textarea { width: 100%; border: 1px solid var(--line); background: #fffefa; border-radius: 0; padding: 12px 13px; color: var(--ink); outline: none; }
+    input:focus, select:focus, textarea:focus { border-color: var(--olive); box-shadow: 0 0 0 2px rgba(119,123,97,.12); }
+    textarea { min-height: 120px; resize: vertical; }
+    .form-bottom { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 22px; }
+    .form-status { color: var(--olive); font-size: .82rem; }
+    .form-help { color: var(--muted); font-size: .72rem; margin: 16px 0 0; }
+    footer { padding: 42px 0 24px; background: #292923; color: #f6f3ed; }
+    .footer-top { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; padding-bottom: 34px; }
+    .footer-brand { font-family: var(--serif); font-size: 1.5rem; }
+    .footer-brand p { color: #b9b7ad; font-family: var(--sans); font-size: .78rem; margin: 8px 0 0; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; font-size: .82rem; }
+    .copyright { border-top: 1px solid #55554c; padding-top: 18px; display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; color: #b9b7ad; font-size: .7rem; }
+    @media (max-width: 900px) {
+      .nav-links { gap: 14px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero-grid { gap: 28px; }
+      .case-grid, .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .case-card:last-child, .service-card:last-child { grid-column: 1 / -1; }
+      .about-grid, .contact-grid { gap: 34px; }
+      .steps { grid-template-columns: repeat(3, 1fr); row-gap: 26px; }
+      .step:nth-child(3) { border-right: 0; }
+    }
+    @media (max-width: 768px) {
+      .wrap { width: min(100% - 32px, 620px); }
+      .nav { min-height: 68px; }
+      .nav-cta { min-height: 42px; padding: 8px 13px; font-size: .76rem; }
+      .hero { padding: 28px 0 48px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 26px; }
+      .hero-copy { padding: 10px 0 0; }
+      .hero h1 { font-size: clamp(3rem, 15vw, 5rem); margin: 14px 0 18px; }
+      .hero-image { height: 115vw; min-height: 340px; max-height: 560px; }
+      .hero-foot { font-size: .68rem; }
+      section.content-section { padding: 70px 0; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 14px; }
+      .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .category { margin-top: 36px; }
+      .photo-card figcaption { display: block; }
+      .photo-card figcaption span:last-child { display: block; }
+      .case-grid, .service-grid { grid-template-columns: 1fr; }
+      .case-card:last-child, .service-card:last-child { grid-column: auto; }
+      .case-card .case-image { height: 250px; }
+      .service-card { min-height: auto; }
+      .steps { grid-template-columns: 1fr; }
+      .step, .step:nth-child(3) { border-right: 0; border-bottom: 1px solid #cfc9be; margin: 0; padding: 18px 0; display: grid; grid-template-columns: 48px 1fr; column-gap: 12px; }
+      .step-number { grid-row: span 2; }
+      .step h3 { margin: 2px 0 5px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-image { height: 110vw; max-height: 500px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+    }
+    @media (max-width: 420px) {
+      .wrap { width: calc(100% - 28px); }
+      .brand { font-size: 1.05rem; }
+      .brand small { font-size: .52rem; }
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-card .photo { aspect-ratio: 5 / 4; }
+      .hero-foot { display: block; }
+      .hero-foot span { display: block; margin-top: 5px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主要導覽">
+      <a class="brand" href="#home" aria-label="小林攝影工作室首頁">小林攝影工作室<small>LIN PHOTOGRAPHY · TAICHUNG</small></a>
+      <div class="nav-links">
+        <a href="#works">作品集</a><a href="#services">服務方案</a><a href="#about">關於小林</a>
+        <a class="nav-cta" href="#contact">詢問檔期 ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Honest moments, softly kept</div>
+            <h1>把真實的你，<br>留在照片裡。<span>小林攝影工作室</span></h1>
+            <p>在臺中，用自然的光、舒服的節奏與真實的互動，記錄愛、相遇，以及那些不需要刻意擺好的瞬間。</p>
+            <div class="button-row">
+              <a class="button button-dark" href="#works">看看作品　↘</a>
+              <a class="button button-light" href="#contact">詢問拍攝檔期　↗</a>
+            </div>
+            <div class="hero-foot"><span>WEDDING · PRE-WEDDING · PORTRAIT</span><span>TAICHUNG, TAIWAN</span></div>
+          </div>
+          <div class="hero-image">
+            <img src="images/hero-couple.jpg" alt="新人在自然光下相視微笑，呈現真實而溫柔的婚紗攝影氛圍" fetchpriority="high">
+            <div class="image-note">真實情緒，比完美姿勢更重要。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="intro-strip"><div class="wrap"><span>自然光線・真實互動</span><span>不過度修飾・保留當下</span><span>臺中出發・全臺可預約</span></div></div>
+
+    <section class="content-section portfolio-section" id="works">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">Selected stories / 01</div><h2>每一段關係，<br>都有自己的樣子。</h2></div><p class="section-intro">不追求一模一樣的漂亮，而是找到屬於每個人的光線、表情與故事。以下為網站示意作品，可替換成工作室實際照片。</p></div>
+        <div class="category">
+          <div class="category-top"><h3>婚紗攝影 <span class="serif">/ Pre-wedding</span></h3><span>01 — 04</span></div>
+          <div class="photo-grid">
+            <figure class="photo-card"><div class="photo"><img src="images/wedding-01.jpg" alt="新人在戶外自然光中牽手散步的婚紗攝影作品" loading="lazy"></div><figcaption><span>午後散步</span><span>PRE-WEDDING</span></figcaption></figure>
+            <figure class="photo-card"><div class="photo"><img src="images/wedding-02.jpg" alt="新人在簡約室內靠近彼此，呈現安靜親密感的婚紗照" loading="lazy"></div><figcaption><span>靠近一點</span><span>PRE-WEDDING</span></figcaption></figure>
+            <figure class="photo-card"><div class="photo"><img src="images/wedding-03.jpg" alt="新人於草地與樹影之間自然互動的婚紗紀錄" loading="lazy"></div><figcaption><span>樹影之間</span><span>PRE-WEDDING</span></figcaption></figure>
+            <figure class="photo-card"><div class="photo"><img src="images/wedding-04.jpg" alt="新人在夕陽下相擁，色調溫暖的戶外婚紗攝影" loading="lazy"></div><figcaption><span>日落之前</span><span>PRE-WEDDING</span></figcaption></figure>
+          </div>
+        </div>
+        <div class="category">
+          <div class="category-top"><h3>婚禮紀錄 <span class="serif">/ Wedding day</span></h3><span>02 — 05</span></div>
+          <div class="photo-grid">
+            <figure class="photo-card"><div class="photo"><img src="images/record-01.jpg" alt="婚禮儀式中新人交換誓言，親友在旁見證的重要時刻" loading="lazy"></div><figcaption><span>交換誓言</span><span>WEDDING DAY</span></figcaption></figure>
+            <figure class="photo-card"><div class="photo"><img src="images/record-02.jpg" alt="婚禮準備期間家人替新娘整理衣著的真實花絮" loading="lazy"></div><figcaption><span>出發以前</span><span>WEDDING DAY</span></figcaption></figure>
+            <figure class="photo-card"><div class="photo"><img src="images/record-03.jpg" alt="婚宴現場親友舉杯祝福新人，記錄婚禮的歡樂互動" loading="lazy"></div><figcaption><span>一起祝福</span><span>WEDDING DAY</span></figcaption></figure>
+            <figure class="photo-card"><div class="photo"><img src="images/record-04.jpg" alt="婚禮結束後新人與親友擁抱，捕捉自然流露的情感" loading="lazy"></div><figcaption><span>擁抱的溫度</span><span>WEDDING DAY</span></figcaption></figure>
+          </div>
+        </div>
+        <div class="category">
+          <div class="category-top"><h3>形象照 <span class="serif">/ Portrait</span></h3><span>03 — 06</span></div>
+          <div class="photo-grid">
+            <figure class="photo-card"><div class="photo"><img src="images/portrait-01.jpg" alt="以柔和窗光拍攝的自然個人形象照，呈現放鬆神情" loading="lazy"></div><figcaption><span>自在的自己</span><span>PORTRAIT</span></figcaption></figure>
+            <figure class="photo-card"><div class="photo"><img src="images/portrait-02.jpg" alt="簡約背景下的專業個人半身肖像，適合職涯與品牌形象" loading="lazy"></div><figcaption><span>專業日常</span><span>PORTRAIT</span></figcaption></figure>
+            <figure class="photo-card"><div class="photo"><img src="images/portrait-03.jpg" alt="自然光與中性色背景搭配的創作者個人肖像" loading="lazy"></div><figcaption><span>創作的人</span><span>PORTRAIT</span></figcaption></figure>
+            <figure class="photo-card"><div class="photo"><img src="images/portrait-04.jpg" alt="以生活場景呈現個人特色與親切氣質的形象攝影" loading="lazy"></div><figcaption><span>生活的側面</span><span>PORTRAIT</span></figcaption></figure>
+          </div>
+        </div>
+        <p class="note">※ 圖片為示意素材。上線前請將對應照片放入 images 資料夾，並確認圖片授權與人物肖像使用權。</p>
+      </div>
+    </section>
+
+    <section class="content-section cases" id="stories">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">Stories behind the frame / 02</div><h2>不只交付照片，<br>也理解你在意什麼。</h2></div><p class="section-intro">每次拍攝開始前，我會先了解你希望留下的感受，再一起決定適合的場景、節奏與成品方向。</p></div>
+        <div class="case-grid">
+          <article class="case-card"><div class="case-image"><img src="images/case-wedding.jpg" alt="戶外婚紗拍攝情境，兩人在自然環境中自在互動" loading="lazy"></div><div class="case-body"><div class="eyebrow">CASE 01 · 婚紗</div><h3>不擅長擺拍的兩個人</h3><p><strong>拍攝情境｜</strong>喜歡戶外、平常不太面對鏡頭的情侶。</p><p><strong>客戶需求｜</strong>希望照片自然、不尷尬，也不要過度修飾。</p><p><strong>成品方向｜</strong>以散步、聊天等簡單互動帶出表情，保留肌膚與環境的真實質感。</p></div></article>
+          <article class="case-card"><div class="case-image"><img src="images/case-day.jpg" alt="婚禮當天家人與新人自然互動的紀實攝影場景" loading="lazy"></div><div class="case-body"><div class="eyebrow">CASE 02 · 婚禮紀錄</div><h3>想把家人的反應也留下</h3><p><strong>拍攝情境｜</strong>重視親友相聚與儀式細節的小型婚禮。</p><p><strong>客戶需求｜</strong>不想整天被指揮拍照，希望賓客能自在享受當天。</p><p><strong>成品方向｜</strong>以紀實方式記錄流程、互動與細節，必要時安排簡短合照。</p></div></article>
+          <article class="case-card"><div class="case-image"><img src="images/case-portrait.jpg" alt="以自然光拍攝的個人形象照，背景簡潔且氛圍真誠" loading="lazy"></div><div class="case-body"><div class="eyebrow">CASE 03 · 形象照</div><h3>看起來專業，也像本人</h3><p><strong>拍攝情境｜</strong>個人品牌、履歷與社群平台形象更新。</p><p><strong>客戶需求｜</strong>希望呈現可靠、親切的形象，不要過度正式。</p><p><strong>成品方向｜</strong>透過簡單引導、自然光與乾淨背景，完成可多場景使用的照片。</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="services">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">Thoughtful packages / 03</div><h2>找到適合你的拍攝方式。</h2></div><p class="section-intro">以下為網站展示用價格範例，實際費用會依拍攝日期、地點、時數與需求確認。</p></div>
+        <div class="service-grid">
+          <article class="service-card"><div class="eyebrow">01 / PRE-WEDDING</div><h3>自然婚紗方案</h3><p>為兩個人的相處留下影像，不必刻意演出。</p><div class="price">NT$ 12,000–22,000 <small>/ 組</small></div><ul><li>拍攝約 2–4 小時</li><li>拍攝前需求討論與場景建議</li><li>精選調色照片約 40–60 張</li><li>預計 4–6 週交件</li></ul><a class="button button-light" href="#contact" data-service="婚紗攝影">詢問此方案 ↗</a></article>
+          <article class="service-card featured"><div class="eyebrow">02 / WEDDING DAY</div><h3>婚禮紀錄方案</h3><p>把儀式、家人、朋友與那些稍縱即逝的瞬間收好。</p><div class="price">NT$ 18,000–36,000 <small>/ 場</small></div><ul><li>依儀式與宴客流程安排時數</li><li>事前流程表與重要人物溝通</li><li>精選調色照片約 400–700 張</li><li>預計 6–8 週交件</li></ul><a class="button button-dark" href="#contact" data-service="婚禮紀錄">詢問此方案 ↗</a></article>
+          <article class="service-card"><div class="eyebrow">03 / PORTRAIT</div><h3>個人形象方案</h3><p>自然、舒服而有辨識度，讓照片保有你的個性。</p><div class="price">NT$ 3,500–8,000 <small>/ 組</small></div><ul><li>拍攝約 1–2 小時</li><li>服裝與拍攝方向建議</li><li>精選調色照片約 10–20 張</li><li>預計 2–3 週交件</li></ul><a class="button button-light" href="#contact" data-service="形象照">詢問此方案 ↗</a></article>
+        </div>
+        <p class="fine-print">加選規則示例：額外精修、延長拍攝、跨區交通、棚租與急件需求另行報價；加選項目與費用會於確認前書面說明。實際張數、交件日期與付款條件以雙方合約為準。</p>
+      </div>
+    </section>
+
+    <section class="content-section process" id="process">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">A simple process / 04</div><h2>把流程交給我，<br>你只需要好好感受。</h2></div><p class="section-intro">從第一次聯絡到收到照片，每一步都會清楚溝通，不讓你在重要日子裡多一份不確定。</p></div>
+        <div class="steps">
+          <article class="step"><div class="step-number">01</div><h3>詢問</h3><p>提供拍攝類型、日期、地點與大致需求，確認檔期及預算方向。</p></article>
+          <article class="step"><div class="step-number">02</div><h3>溝通</h3><p>討論風格、流程、服裝、場景與重要人物，整理拍攝計畫。</p></article>
+          <article class="step"><div class="step-number">03</div><h3>拍攝</h3><p>以簡單引導與自然互動進行，保留舒適節奏與真實反應。</p></article>
+          <article class="step"><div class="step-number">04</div><h3>精修</h3><p>挑選照片並統一色調，保留自然膚質與現場氛圍。</p></article>
+          <article class="step"><div class="step-number">05</div><h3>交件</h3><p>透過線上相簿交付檔案，依約提供下載與保存方式。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="about">
+      <div class="wrap about-grid">
+        <div class="about-image"><img src="images/photographer.jpg" alt="小林攝影工作室攝影師在自然光環境中準備拍攝器材" loading="lazy"></div>
+        <div class="about-copy"><div class="eyebrow">A little about me / 05</div><h2>嗨，我是小林。<br>很高興用影像認識你。</h2><p>我相信，一張照片的價值不只在於好看，也在於多年以後再看見它，仍然能想起當時的聲音、溫度，以及身邊的人。</p><p>拍攝時，我不會要求每個人都變成同一種樣子。我會先聽你在意的事，再用清楚而輕鬆的引導，讓你慢慢找到自在的狀態。</p><p>我喜歡自然光、真實膚色、生活裡的小細節，也尊重每個人對隱私與影像的選擇。對我來說，好的照片不是把你修成另一個人，而是好好留下你本來的樣子。</p><div class="values"><span>自然光</span><span>真實情緒</span><span>溫柔引導</span><span>不過度修飾</span></div><div class="signature">See you in the light.</div></div>
+      </div>
+    </section>
+
+    <section class="content-section contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-copy"><div class="eyebrow">Let's make something meaningful / 06</div><h2>說說你的計畫，<br>一起留下重要的事。</h2><p>不確定該選哪個方案也沒關係。先告訴我你正在計畫什麼，我會協助你評估拍攝方式、時間與預算。</p><div class="contact-detail"><p><strong>Email</strong>　hello@linphotography.example</p><p><strong>Instagram</strong>　@lin.photography.example</p><p><strong>服務地區</strong>　臺中出發・全臺預約</p></div></div>
+        <form id="inquiry-form">
+          <div class="form-grid">
+            <div class="field"><label for="name">姓名 *</label><input id="name" name="name" autocomplete="name" required placeholder="怎麼稱呼你？"></div>
+            <div class="field"><label for="contact-method">聯絡方式 *</label><input id="contact-method" name="contact" required placeholder="Email、電話或 LINE ID"></div>
+            <div class="field"><label for="type">拍攝類型 *</label><select id="type" name="type" required><option value="">請選擇</option><option>婚紗攝影</option><option>婚禮紀錄</option><option>形象照</option><option>其他需求</option></select></div>
+            <div class="field"><label for="date">預計日期</label><input id="date" name="date" type="date"></div>
+            <div class="field"><label for="location">拍攝地點</label><input id="location" name="location" placeholder="例如：臺中市區、戶外場地"></div>
+            <div class="field"><label for="budget">預算範圍</label><select id="budget" name="budget"><option value="">尚未確定</option><option>NT$ 3,000 以下</option><option>NT$ 3,000–8,000</option><option>NT$ 8,000–15,000</option><option>NT$ 15,000–30,000</option><option>NT$ 30,000 以上</option></select></div>
+            <div class="field full"><label for="message">想告訴我的事</label><textarea id="message" name="message" placeholder="想留下什麼樣的照片？有沒有特別在意的細節？"></textarea></div>
+          </div>
+          <div class="form-bottom"><button class="button button-dark" type="submit">整理詢問內容 ↗</button><span class="form-status" id="form-status" role="status" aria-live="polite"></span></div>
+          <p class="form-help">此為靜態網站示範表單，按下按鈕會整理詢問內容並開啟你的電子郵件程式。正式上線前請替換為工作室實際 Email，或串接 Formspree、Netlify Forms 等表單服務。</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top"><div class="footer-brand">小林攝影工作室<p>自然、不過度修飾，讓重要的情緒留下來。</p></div><div class="footer-links"><a href="mailto:hello@linphotography.example">Email ↗</a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="#works">回到作品集 ↑</a></div></div>
+      <div class="copyright"><span>© <span id="year"></span> 小林攝影工作室. All rights reserved.</span><span>臺中・婚紗攝影・婚禮紀錄・形象照</span></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll("[data-service]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        const typeSelect = document.getElementById("type");
+        const service = link.getAttribute("data-service");
+        typeSelect.value = service;
+      });
+    });
+
+    document.getElementById("inquiry-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const subject = encodeURIComponent("拍攝詢問｜" + (data.get("type") || "未指定類型"));
+      const body = encodeURIComponent(
+        "姓名：" + (data.get("name") || "") + "\n" +
+        "聯絡方式：" + (data.get("contact") || "") + "\n" +
+        "拍攝類型：" + (data.get("type") || "") + "\n" +
+        "預計日期：" + (data.get("date") || "尚未確定") + "\n" +
+        "拍攝地點：" + (data.get("location") || "尚未確定") + "\n" +
+        "預算範圍：" + (data.get("budget") || "尚未確定") + "\n\n" +
+        "留言：\n" + (data.get("message") || "無")
+      );
+      document.getElementById("form-status").textContent = "已整理內容，正在開啟電子郵件程式…";
+      window.location.href = "mailto:hello@linphotography.example?subject=" + subject + "&body=" + body;
+    });
+  </script>
+</body>
+</html>
